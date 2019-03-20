@@ -1,0 +1,96 @@
+# EditorConfig is awesome:
+# http://editorconfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[_*]
+indent_style = space
+indent_size = 2
+tab_width = 2
+end_of_line = LF
+
+[VERSION]
+insert_final_newline = false
+
+# 4 space indentation
+[*.py]
+indent_style = space
+indent_size = 4
+
+[*.go]
+indent_style = tab
+indent_size = 4
+tab_width = 8
+
+[*.tmpl]
+indent_style = tab
+indent_size = 2
+
+# Tab indentation (no size specified)
+[Makefile]
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+[*.yml]
+indent_style = space
+indent_size = 2
+
+[*.{less,yml}]
+indent_style = space
+indent_size = 2
+
+[*.js]
+indent_style = space
+indent_size = 4
+
+# Indentation override for all JS under lib directory
+[lib/**.js]
+indent_style = space
+indent_size = 2
+
+[{*.json,*.sh}]
+indent_style = space
+indent_size = 2
+
+# Matches the exact files either package.json or .travis.yml
+[{package.json,.travis.yml}]
+indent_style = space
+indent_size = 2
+
+[ChangeLog]
+indent_size = 8
+
+[*.[ch]]
+indent_size = 4
+
+[*.conf]
+indent_size = 2
+
+[*.php]
+indent_size = 4
+
+[*.md]
+indent_style = space
+indent_size = 4
+
+[Dockerfile]
+indent_style = space
+indent_size = 2
+
+[DOCKER_REPOSITORY]
+insert_final_newline = false
+
+[DOCKER_TAG_LATEST]
+insert_final_newline = false
+
+[BLACKLIST]
+insert_final_newline = false
