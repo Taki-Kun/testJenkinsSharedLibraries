@@ -18,7 +18,7 @@ def call(Map parameters = [:], body) {
                 }
                 when {
                     beforeAgent true
-                    branch "develop"
+                    branch "master"
                 }
                 steps {
                     sh "echo test."
