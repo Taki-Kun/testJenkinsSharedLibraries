@@ -40,7 +40,13 @@ def call(Map parameters = [:]) {
             ]
         ],
         submoduleCfg: scm.submoduleCfg,
-        userRemoteConfigs: [scm.userRemoteConfigs[0]] /*+ [
+        userRemoteConfigs: [
+            [
+                credentialsId: scm.userRemoteConfigs[0]['credentialsId'],
+                url: scm.userRemoteConfigs[0]['url']
+            ]
+        ]
+        /*[
             [
                 url: ""
             ]
