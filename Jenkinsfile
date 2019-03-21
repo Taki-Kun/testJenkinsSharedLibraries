@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-import io.fabric8.Fabric8Commands
+// import io.fabric8.Fabric8Commands
 
 
 // @Library('github.com/docker/jenkins-pipeline-scripts') _
