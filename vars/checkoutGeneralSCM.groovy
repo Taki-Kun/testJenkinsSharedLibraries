@@ -4,6 +4,8 @@ def call(Map parameters = [:]) {
 
     def _browser = parameters.get('browser', 'auto')
     echo _browser
+    // def _url = parameters.get('url')
+    echo scm.userRemoteConfigs
 
     checkout changelog: true, poll: true, scm: [
         $class: 'GitSCM',
@@ -39,6 +41,10 @@ def call(Map parameters = [:]) {
             ]
         ],
         submoduleCfg: scm.submoduleCfg,
-        userRemoteConfigs: scm.userRemoteConfigs
+        userRemoteConfigs: scm.userRemoteConfigs /*+ [
+            [
+                url: ""
+            ]
+        ]*/
     ]
 }
