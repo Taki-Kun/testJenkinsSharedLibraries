@@ -14,7 +14,7 @@ def call(Map parameters = [:], Closure body={}) {
             stage('Test') {
                 agent {
                     node {
-                        label '${_label}'
+                        label '_label'
                         customWorkspace "workspace/${JOB_NAME.replace('%2F', '/')}"
                     }
                 }
