@@ -7,10 +7,7 @@ def call(Map parameters = [:]) {
     def _url = parameters.get('url')
     echo scm.userRemoteConfigs[0]['credentialsId']
     echo scm.userRemoteConfigs.getClass().getName()
-    echo scm.userRemoteConfigs.list()
-    // for (def index = 0; index < echo scm.userRemoteConfigs[0].size(); index++) {
-    //     nameParts[index] = URLDecoder.decode(nameParts[index], 'UTF-8')
-    // }
+    echo scm.userRemoteConfigs.subList()
 
     checkout changelog: true, poll: true, scm: [
         $class: 'GitSCM',
