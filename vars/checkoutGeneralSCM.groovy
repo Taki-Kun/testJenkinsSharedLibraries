@@ -6,7 +6,7 @@ def call(Map parameters = [:]) {
     echo _browser
     def _url = parameters.get('url')
     echo scm.userRemoteConfigs[0]['credentialsId']
-    echo scm.userRemoteConfigs.getProperties()
+    echo scm.userRemoteConfigs.getClass().getName()
     // for (def index = 0; index < echo scm.userRemoteConfigs[0].size(); index++) {
     //     nameParts[index] = URLDecoder.decode(nameParts[index], 'UTF-8')
     // }
