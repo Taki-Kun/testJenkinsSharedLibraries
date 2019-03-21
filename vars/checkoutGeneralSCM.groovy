@@ -4,13 +4,14 @@ def call(Map parameters = [:]) {
 
     def _browser = parameters.get('browser', 'auto')
     echo _browser
-    def _url = parameters.get('url')
-    echo scm.userRemoteConfigs[0].credentialsId
-    echo scm.userRemoteConfigs.getClass().getName()
+    def _url = parameters.get('url', scm.userRemoteConfigs[0].url)
+    echo _url
+    def _name = parameters.get('name', scm.branches)
+    echo _name
 
     checkout(changelog: true, poll: true, scm: [
         $class: 'GitSCM',
-        branches: scm.branches,
+        branches: "${_name}",
         // browser: [$class: 'GithubWeb', repoUrl: 'https://github.com'],
         // browser: [$class: 'GitLab', repoUrl: 'http://gitlab.hellotalk.com', version: '10.7'],
         doGenerateSubmoduleConfigurations: false,
@@ -44,7 +45,7 @@ def call(Map parameters = [:]) {
         submoduleCfg: scm.submoduleCfg,
         userRemoteConfigs: [
             [
-                credentialsId: scm.userRemoteConfigs[0]['credentialsId'],
+                credentialsId: scm.userRemoteConfigs[0].credentialsId,
                 url: "${_url}"
                 // name
                 // refspec
