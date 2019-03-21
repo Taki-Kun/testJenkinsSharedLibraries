@@ -2,7 +2,8 @@
 
 def call(Map parameters = [:]) {
 
-    def _browser = parameters.get('browser', 'github')
+    def _browser = parameters.get('browser', 'auto')
+    echo _browser
 
     checkout changelog: true, poll: true, scm: [
         $class: 'GitSCM',
