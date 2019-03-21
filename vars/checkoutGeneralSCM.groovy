@@ -4,7 +4,7 @@ def call(Map parameters = [:]) {
 
     def _browser = parameters.get('browser', 'auto')
     echo _browser
-    // def _url = parameters.get('url')
+    def _url = parameters.get('url')
 
     checkout changelog: true, poll: true, scm: [
         $class: 'GitSCM',
@@ -43,13 +43,8 @@ def call(Map parameters = [:]) {
         userRemoteConfigs: [
             [
                 credentialsId: scm.userRemoteConfigs[0]['credentialsId'],
-                url: scm.userRemoteConfigs[0]['url']
+                url: "${_url}"
             ]
         ]
-        /*[
-            [
-                url: ""
-            ]
-        ]*/
     ]
 }
