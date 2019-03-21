@@ -2,9 +2,8 @@
 
 def call(Map parameters = [:], Closure body={}) {
 
-    def defaultLabel = buildId('clients')
-    echo defaultLabel
-    // def label = parameters.get('label', defaultLabel)
+    def defaultLabel = buildId('iOS')
+    def label = parameters.get('label', defaultLabel)
 
     pipeline {
         agent none
