@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def call(Map parameters = [:], Closure body={}) {
+def call(Map parameters = [:], body) {
 
     def defaultLabel = buildId('clients')
     echo defaultLabel
