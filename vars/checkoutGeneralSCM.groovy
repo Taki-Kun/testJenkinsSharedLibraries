@@ -8,7 +8,7 @@ def call(Map parameters = [:]) {
     echo scm.userRemoteConfigs[0].credentialsId
     echo scm.userRemoteConfigs.getClass().getName()
 
-    checkout changelog: true, poll: true, scm: [
+    checkout(changelog: true, poll: true, scm: [
         $class: 'GitSCM',
         branches: scm.branches,
         // browser: [$class: 'GithubWeb', repoUrl: 'https://github.com'],
@@ -50,5 +50,5 @@ def call(Map parameters = [:]) {
                 // refspec
             ]
         ]
-    ]
+    ])
 }
