@@ -8,11 +8,11 @@ def call(Map parameters = [:]) {
     echo _url
     // def _name = parameters.get('name') ? [[name: "*/${parameters.get('name')}"]] : scm.branches
     def _name = scm.branches
-    echo _name
+    println(_name)
 
     checkout(changelog: true, poll: true, scm: [
         $class: 'GitSCM',
-        branches: "${_name}",
+        branches: _name,
         // browser: [$class: 'GithubWeb', repoUrl: 'https://github.com'],
         // browser: [$class: 'GitLab', repoUrl: 'http://gitlab.hellotalk.com', version: '10.7'],
         doGenerateSubmoduleConfigurations: false,
