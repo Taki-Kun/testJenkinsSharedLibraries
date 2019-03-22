@@ -5,6 +5,7 @@
 
 // @Library('github.com/docker/jenkins-pipeline-scripts') _
 // @Library('github.com/fabric8io/fabric8-pipeline-library@master')
+// @Library('pipeline-library') pipelineLibrary
 @Library('github.com/Taki-Kun/testJenkinsSharedLibraries@master') _
 def dummy
 clientsNode {
