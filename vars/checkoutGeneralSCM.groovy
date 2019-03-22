@@ -3,10 +3,10 @@
 def call(Map parameters = [:]) {
 
     def _browser = parameters.get('browser', 'auto')
-    echo _browser
+    println(_browser)
     def _url = parameters.get('url', scm.userRemoteConfigs[0].url)
-    echo _url
-    echo scm.userRemoteConfigs.head()
+    println(_url)
+    println(scm.userRemoteConfigs.head())
     // def _name = parameters.get('name') ? [[name: "*/${parameters.get('name')}"]] : scm.branches
     def _name = scm.branches
     println(_name)

@@ -13,4 +13,3 @@ clientsNode {
         git 'https://github.com/fabric8io/fabric8-pipeline-library.git'
     }
 }
-
