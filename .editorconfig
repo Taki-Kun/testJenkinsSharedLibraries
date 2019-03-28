@@ -20,6 +20,12 @@ end_of_line = LF
 [VERSION]
 insert_final_newline = false
 
+# Tab indentation (no size specified)
+[Makefile]
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
 # 4 space indentation
 [*.py]
 indent_style = space
@@ -34,21 +40,19 @@ tab_width = 8
 indent_style = tab
 indent_size = 2
 
-# Tab indentation (no size specified)
-[Makefile]
-indent_style = tab
-indent_size = 4
-tab_width = 4
-
 [*.yml]
 indent_style = space
 indent_size = 2
 
-[*.{less,yml}]
+[*.{less,yaml}]
 indent_style = space
 indent_size = 2
 
 [*.js]
+indent_style = space
+indent_size = 4
+
+[*.groovy]
 indent_style = space
 indent_size = 4
 
@@ -94,3 +98,8 @@ insert_final_newline = false
 
 [BLACKLIST]
 insert_final_newline = false
+
+[gradlew.bat]
+end_of_line = crlf
+indent_style = space
+indent_size = 2
