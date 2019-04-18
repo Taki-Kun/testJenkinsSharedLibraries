@@ -11,9 +11,16 @@ sourceCompatibility = 1.8
 
 sourceSets {
     main.groovy.srcDirs = ['src']
-    main.resources.srcDirs = ['resources']
     test.groovy.srcDirs = ['test']
     vars.groovy.srcDirs = ['vars']
+
+    main.resources.srcDirs = ['resources']
+    test.resources.srcDirs = ['resources']
+    vars.resources.srcDirs = ['resources']
+
+    main.java.srcDirs = ['src']
+    test.java.srcDirs = ['test']
+    vars.java.srcDirs = ['vars']
 }
 
 /*
@@ -22,25 +29,14 @@ sourceSets {
         groovy {
             // don't add vars - it's loaded dynamic!
             srcDirs = ['src']
+            // srcDirs = ["${project.rootDir.toString()}/src", "${project.rootDir.toString()}/vars"]
         }
     }
 
     test {
         groovy {
             srcDirs = ['test']
-        }
-    }
-}
-
-sourceSets {
-    main {
-        groovy {
-            srcDirs = ["${project.rootDir.toString()}/src", "${project.rootDir.toString()}/vars"]
-        }
-    }
-    test {
-        groovy {
-            srcDir "${project.rootDir.toString()}/test"
+            // srcDir "${project.rootDir.toString()}/test"
         }
     }
 }*/
